@@ -1,0 +1,10 @@
+{
+	ingredientPattern: "S_S,PPP,S_S",
+	ingredients: {
+		"S": { type: "item", code: "game:stick" },
+		"P": { type: "item", code: "game:plank-*" }
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "keg" }
+}

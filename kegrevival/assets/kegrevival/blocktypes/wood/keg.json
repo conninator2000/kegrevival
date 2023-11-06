@@ -1,0 +1,96 @@
+{
+	"code": "kegrevival",
+	"class": "BlockKeg",
+	"entityclass": "BlockKegEntity",
+	"shape": { "base": "block/wood/keg/empty" },
+	"textures": {
+		"oak1": { "base": "oak1" },
+		"kegfacefront": { "base": "kegfacefront" },
+		"kegfacerear": { "base": "kegfacerear" }
+	},
+	"behaviors": [ { "name": "UnstableFalling" } ],
+	"attributes": {
+		"canDrinkFrom": true,
+		"liquidContainerProps": {
+			"capacityLitres": 50,
+			"transferSizeLitres": 1,
+			"emptyShapeLoc": "block/wood/keg/keg",
+			"opaqueContentShapeLoc": "game:shapes/block/basic/nothing",
+			"liquidContentShapeLoc": "game:shapes/block/basic/nothing",
+			"liquidMaxYTranslate": 0.4375
+		}
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"decorative": [ "*" ]
+	},
+	"blockmaterial": "Wood",
+	"replaceable": 900,
+	"resistance": 1.5,
+	"lightAbsorption": 1,
+	"maxStackSize": 1,
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"emitsideao": {
+		"all": false
+	},
+	"heldTpIdleAnimation": "holdbothhandslarge",
+	"heldTpUseAnimation": "twohandplaceblock",
+	"collisionbox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.9375,
+		"z2": 1
+	},
+	"selectionbox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 1,
+		"y2": 0.9375,
+		"z2": 1
+	},
+	"tpHandTransform": {
+		"translation": {
+			"x": -0.9,
+			"y": -1.4,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": 137,
+			"y": -11,
+			"z": -75
+		},
+		"origin": {
+			"x": 0.2,
+			"y": 0.5,
+			"z": 0.5
+		},
+		"scale": 0.5899
+	},
+	"fpHandTransform": {
+		"translation": {
+			"x": -0.4,
+			"y": 1.05,
+			"z": 0.9
+		},
+		"rotation": {
+			"x": 0,
+			"y": -134,
+			"z": 0
+		},
+		"scale": 2.01
+	}
+}

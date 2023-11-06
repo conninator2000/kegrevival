@@ -1,0 +1,14 @@
+{
+    "type": "code",
+    "modid": "kegrevival",
+    "name": "kegrevival",
+    "authors": [
+      "Sean_OCuin",
+      "Cind12"
+    ],
+    "description": "Revives a 50L keg to the game for liquid storage",
+    "version": "1.0.2",
+    "dependencies": {
+        "game": ""
+    }
+}
