@@ -1,8 +1,8 @@
 ﻿using Vintagestory.API.Common;
 
-namespace kegrevival
+namespace kegrevivedagain
 {
-    public class kegrevivalModSystem : ModSystem
+    public class kegrevivedagainModSystem : ModSystem
     {
         public override void Start(ICoreAPI api)
         {

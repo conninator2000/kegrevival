@@ -7,7 +7,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 
-namespace kegrevival 
+namespace kegrevivedagain 
 {
     public class BlockEntityKeg : BlockEntityLiquidContainer
     {
@@ -16,9 +16,32 @@ namespace kegrevival
         private BlockKeg ownBlock;
         public float MeshAngle;
 
-        public override string InventoryClassName => "keg";
+        public override string InventoryClassName => "Keg";
 
-        public BlockEntityKeg() => this.inventory = new InventoryGeneric(1, (string)null, (ICoreAPI)null, (NewSlotDelegate)null);
+        public BlockEntityKeg()
+        {
+            this.inventory = new InventoryGeneric(1, (string)null, (ICoreAPI)null, (NewSlotDelegate)null);
+            inventory.BaseWeight = 1.0f;
+            inventory.OnGetSuitability = GetSuitability;
+
+        }
+
+        private float GetSuitability(ItemSlot sourceSlot, ItemSlot targetSlot, bool isMerge)
+        {
+            //Same as BE Barrels get suitability
+            if (targetSlot == inventory[1])
+            {
+                if (inventory[0].StackSize > 0)
+                {
+                    ItemStack currentStack = inventory[0].Itemstack;
+                    ItemStack testStack = sourceSlot.Itemstack;
+                    if (currentStack.Collectible.Equals(currentStack, testStack, GlobalConstants.IgnoredStackAttributes)) return -1;
+                }
+            }
+
+            // normal behavior
+            return (isMerge ? (inventory.BaseWeight + 3) : (inventory.BaseWeight + 1)) + (sourceSlot.Inventory is InventoryBasePlayer ? 1 : 0);
+        }
 
         public override void Initialize(ICoreAPI api)
         {
@@ -35,14 +58,11 @@ namespace kegrevival
           ItemStack stack,
           float baseMul)
         {
-            if (transType == EnumTransitionType.Dry)
-            {
-                return (room != null ? (room.ExitCount == 0 ? 1 : 0) : 0) != 0 ? 2f : 0.5f;
-            }
-            if (transType != EnumTransitionType.Perish || transType != EnumTransitionType.Ripen)
-                return 1f;
-            float perishRate = GetPerishRate();
-            return transType == EnumTransitionType.Ripen ? GameMath.Clamp((float)((1.0 - (double)perishRate - 0.5) * 3.0), 0.0f, 1f) : baseMul * (perishRate - 0.1f);
+            //Could update this to read from a config maybe?
+            float kegMult = 0.6f;
+
+            // Use the inherited method (like barrels do) but with the efficiency that kegs get naturally over them
+            return base.Inventory_OnAcquireTransitionSpeed(transType, stack, baseMul * kegMult);
         }
 
         public override void OnBlockBroken(IPlayer byPlayer = null)

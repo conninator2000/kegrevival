@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{59F881FD-97DF-4852-A371-A360A85496BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CakeBuild", "CakeBuild\CakeBuild.csproj", "{59F881FD-97DF-4852-A371-A360A85496BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kegrevival", "kegrevival\kegrevival.csproj", "{8BBA94FE-2C0E-44E4-A36A-07A192ECB5BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kegrevivedagain", "kegrevival\kegrevivedagain.csproj", "{8BBA94FE-2C0E-44E4-A36A-07A192ECB5BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,5 @@
 {
-	"code": "kegrevival",
+	"code": "keg",
 	"class": "BlockKeg",
 	"entityclass": "BlockKegEntity",
 	"shape": { "base": "block/wood/keg/empty" },

@@ -4,7 +4,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 
-namespace kegrevival
+namespace kegrevivedagain
 {
     public class BlockKeg : BlockLiquidContainerTopOpened
     {
@@ -12,9 +12,9 @@ namespace kegrevival
 
         protected override string meshRefsCacheKey => "kegMeshRefs";
 
-        protected override AssetLocation emptyShapeLoc => new AssetLocation("kegrevival:shapes/block/wood/keg/empty.json");
+        protected override AssetLocation emptyShapeLoc => new AssetLocation("kegrevivedagain:shapes/block/wood/keg/empty.json");
 
-        protected override AssetLocation contentShapeLoc => new AssetLocation("kegrevival:shapes/block/wood/keg/contents.json");
+        protected override AssetLocation contentShapeLoc => new AssetLocation("kegrevivedagain:shapes/block/wood/keg/contents.json");
 
         protected override float liquidMaxYTranslate => 7f / 16f;
 

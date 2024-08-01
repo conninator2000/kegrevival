@@ -1,14 +1,15 @@
 {
-    "type": "code",
-    "modid": "kegrevival",
-    "name": "kegrevival",
-    "authors": [
-      "Sean_OCuin",
-      "Cind12"
-    ],
-    "description": "Revives a 50L keg to the game for liquid storage",
-    "version": "1.0.2",
-    "dependencies": {
-        "game": ""
-    }
+  "type": "code",
+  "modid": "kegrevivedagain",
+  "name": "Keg Revived (Again)",
+  "authors": [
+    "Sean_OCuin",
+    "Cind12",
+    "conninator2000"
+  ],
+  "description": "Revives a 50L keg to the game for liquid storage (again). It is a more efficient barrel but can't cure liquids.",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": ""
+  }
 }
