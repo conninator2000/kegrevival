@@ -8,7 +8,6 @@
 		"kegfacefront": { "base": "kegfacefront" },
 		"kegfacerear": { "base": "kegfacerear" }
 	},
-	"behaviors": [ { "name": "UnstableFalling" } ],
 	"attributes": {
 		"canDrinkFrom": true,
 		"liquidContainerProps": {
