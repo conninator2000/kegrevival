@@ -8,7 +8,7 @@
     "conninator2000"
   ],
   "description": "Revives a 50L keg to the game for liquid storage (again). It is a more efficient barrel but can't cure liquids.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "dependencies": {
     "game": ""
   }

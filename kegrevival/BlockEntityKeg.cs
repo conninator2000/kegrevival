@@ -7,7 +7,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 
-namespace kegrevivedagain 
+namespace kegrevivedagain
 {
     public class BlockEntityKeg : BlockEntityLiquidContainer
     {
@@ -51,18 +51,18 @@ namespace kegrevivedagain
             if (api.Side != EnumAppSide.Client) return;
             this.currentMesh = GenMesh();
             MarkDirty(true, (IPlayer)null);
+
+            //Add the now private function to be called on each update (since Inventory_OnAquireTransitionSpeed has been deprecated grumble grumble)
+            inventory.OnAcquireTransitionSpeed += Inventory_OnAcquireTransitionSpeed;
         }
 
-        protected override float Inventory_OnAcquireTransitionSpeed(
+        private float Inventory_OnAcquireTransitionSpeed(
           EnumTransitionType transType,
           ItemStack stack,
           float baseMul)
         {
-            //Could update this to read from a config maybe?
             float kegMult = 0.6f;
-
-            // Use the inherited method (like barrels do) but with the efficiency that kegs get naturally over them
-            return base.Inventory_OnAcquireTransitionSpeed(transType, stack, baseMul * kegMult);
+            return baseMul * kegMult;
         }
 
         public override void OnBlockBroken(IPlayer byPlayer = null)
@@ -74,7 +74,7 @@ namespace kegrevivedagain
             base.OnBlockPlaced(byItemStack);
             if (api.Side != EnumAppSide.Client)
                 return;
-            currentMesh =GenMesh();
+            currentMesh = GenMesh();
             MarkDirty(true, (IPlayer)null);
         }
 
